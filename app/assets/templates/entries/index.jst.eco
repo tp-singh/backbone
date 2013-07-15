@@ -13,7 +13,7 @@
 <% for entry in @entries.models:  %>
 	<tr><td><%= entry.get('name') %></td>
 	<td><button id="edit_entry" class="btn btn-small"><i class="icon-edit"></i> Edit</button>
-	<button id="delete_entry" class="btn btn-small"><i class="icon-remove"></i> Remove</button></td>
+	<button id="<%= entry.get('id') %>" class="delete_entry btn btn-small"><i class="icon-remove"></i> Remove</button></td>
 	</tr>
 <% end %>
 </table>

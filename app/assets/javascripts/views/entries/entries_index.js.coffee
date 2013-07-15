@@ -4,10 +4,12 @@ class Raffler.Views.EntriesIndex extends Backbone.View
 
   events: ->
     'submit #new_entry': 'createEntry'
- 
+    'click .delete_entry': 'destroyEntry'
+
   initialize: ->
     @collection.on('reset', @render, this)
     @collection.on('add', @render, this)
+    @collection.on('remove', @render, this)
 
   render: ->
     $(@el).html(@template(entries: @collection))
@@ -21,6 +23,11 @@ class Raffler.Views.EntriesIndex extends Backbone.View
       success: ->
         $('#new_entry')[0].reset()
       error: @handleError
+  
+  destroyEntry: (event) ->
+    event.preventDefault()
+    model = @collection.get(event.target.id)
+    model.destroy()
 
   handleError: (entry, response) ->
     if response.status = 422
