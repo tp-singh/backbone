@@ -1,0 +1,15 @@
+development: &defaults
+  adapter: mysql2
+  username: root
+  password: admin
+  database: rails4_dev
+  pool: 5
+  timeout: 5000
+
+test:
+  <<: *defaults
+  database: rails4_test
+
+production:
+  <<: *defaults
+  database: rails4_prod

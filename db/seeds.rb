@@ -1,0 +1,6 @@
+Entry.create(name: 'TpSingh')
+Entry.create(name: 'Maheep Singh')
+Entry.create(name: 'Harjinder Singh')
+Entry.create(name: 'Ishwinder Singh')
+Entry.create(name: 'Harjot Singh')
+Entry.create(name: 'Harneev Singh')
